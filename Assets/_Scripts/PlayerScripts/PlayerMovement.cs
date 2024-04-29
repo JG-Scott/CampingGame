@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float GravityScale = -29.81f;
 
 
-    Vector3 m_Velocity;
+    Vector3 m_velocity;
     bool m_isGrounded;
 
 
@@ -33,8 +33,8 @@ public class PlayerMovement : MonoBehaviour
     {
         m_isGrounded = Physics.CheckSphere(GroundCheck.position, GroundDistance, GroundMask);
 
-        if(m_isGrounded && m_Velocity.y < 0) {
-            m_Velocity.y = -2f;
+        if(m_isGrounded && m_velocity.y < 0) {
+            m_velocity.y = -2f;
         }
         
         
@@ -43,9 +43,9 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = (transform.right * x + transform.forward * z).normalized * Speed * Time.deltaTime;
 
-        m_Velocity.y += GravityScale * Time.deltaTime * Time.deltaTime;
+        m_velocity.y += GravityScale * Time.deltaTime * Time.deltaTime;
 
-        move += m_Velocity;
+        move += m_velocity;
     
         Controller.Move(move);
 
