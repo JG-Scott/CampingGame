@@ -25,7 +25,7 @@ public class PlayerCarryLogic : MonoBehaviour
     private void Update() {
         if(m_currentObject != null) {
             //m_currentObject.transform.position = transform.position;
-                m_currentObject.transform.position = Vector3.Lerp( m_currentObject.transform.position, transform.position, Time.deltaTime * LerpSpeed*2);
+                m_currentObject.transform.position = Vector3.Lerp( m_currentObject.transform.position, transform.position, Time.deltaTime * LerpSpeed);
 
             m_currentObject.transform.rotation = Quaternion.Slerp(m_currentObject.transform.rotation, transform.rotation, Time.deltaTime * LerpSpeed);
             //m_currentObject.transform.position = Vector3.Lerp(m_currentObject.transform.position, transform.position, Time.deltaTime * LerpSpeed);
