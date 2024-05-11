@@ -24,6 +24,7 @@ public class CampEnteranceTrigger : MonoBehaviour
             other.gameObject.GetComponentInChildren<PlayerCarryLogic>().Detach();
             CampCooler.SetActive(true);
             CampPack.SetActive(true);
+            GameManager.Instance.ProgressObjective();
             Destroy(gameObject);
         }    
     }

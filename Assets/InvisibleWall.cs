@@ -27,6 +27,9 @@ public class InvisibleWall : MonoBehaviour
 
     public void ObjectGrabbed() {
         m_grabbedObjects++;
-        if(m_grabbedObjects >= 2) transform.parent.gameObject.SetActive(false);
+        if(m_grabbedObjects >= 2) {
+            GameManager.Instance.ProgressObjective();
+            transform.parent.gameObject.SetActive(false);
+        }
     }
 }
